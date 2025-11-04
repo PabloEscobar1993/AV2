@@ -18,10 +18,10 @@ interface ProductionTimelineProps {
 
 const getStatusColor = (status: ProductionStep['status']) => {
   switch (status) {
-    case 'Concluída': return '#2ecc71'; // Verde
-    case 'Em Andamento': return '#3498db'; // Azul
-    case 'Atrasada': return '#e74c3c'; // Vermelho
-    case 'Pendente': return '#95a5a6'; // Cinza
+    case 'Concluída': return '#2ecc71'; 
+    case 'Em Andamento': return '#3498db'; 
+    case 'Atrasada': return '#e74c3c'; 
+    case 'Pendente': return '#95a5a6'; 
     default: return '#ccc';
   }
 };
@@ -42,7 +42,7 @@ const ProductionTimeline: React.FC<ProductionTimelineProps> = ({ batchId, steps 
             alignItems: 'flex-start' 
           }}
         >
-          {/* Indicador de Status/Linha */}
+          {/* Indicador de Status*/}
           <div style={{ 
             display: 'flex', 
             flexDirection: 'column', 
@@ -57,7 +57,7 @@ const ProductionTimeline: React.FC<ProductionTimelineProps> = ({ batchId, steps 
               border: '3px solid white',
               boxShadow: '0 0 0 2px ' + getStatusColor(step.status),
             }} />
-            {/* Linha vertical (exceto para o último item) */}
+            {/* Linha vertical  */}
             {index < steps.length - 1 && (
               <div style={{ 
                 width: '2px', 

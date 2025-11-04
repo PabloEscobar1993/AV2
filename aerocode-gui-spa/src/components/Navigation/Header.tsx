@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    // Substituindo o style inline pela classe CSS:
+    
     <header className="app-header"> 
       <h2>Aerocode - Sistema de Gestão de Produção</h2>
       <div>

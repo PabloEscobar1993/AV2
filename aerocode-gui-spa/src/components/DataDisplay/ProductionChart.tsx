@@ -20,7 +20,7 @@ const ProductionChart: React.FC = () => {
         color: '#999',
         fontSize: '1.2em'
       }}>
-        [ Placeholder Visual: Área para Gráfico de Barras ou Linhas com dados de produção. ]
+        [ aqui é uma área para Gráfico de Barras ou Linhas com dados de produção. ]
       </div>
     </div>
   );

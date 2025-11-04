@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ProductionTimeline, { type ProductionStep } from '../components/WorkFlow/ProductionTimeline'; 
 
 // =========================================================
-// 1. Tipos e Mock Data (Base)
+// 1. Tipos e Mock Data
 // =========================================================
 
 type ProductionStatus = 'Aguardando' | 'Em Produção' | 'Pausado' | 'Concluído' | 'Defeito';
@@ -16,7 +16,7 @@ interface Batch {
   status: ProductionStatus;
 }
 
-// Mocks de Lotes e Workflow (Mantidos)
+// Mocks de Lotes e Workflow 
 const mockBatches: Batch[] = [
   { id: 'LOT-A45-001', model: 'AeroCode X-Jet', quantity: 5, startDate: '2025-10-01', estimatedCompletion: '2025-11-15', status: 'Em Produção' },
   { id: 'LOT-A45-002', model: 'AeroCode X-Jet', quantity: 3, startDate: '2025-10-15', estimatedCompletion: '2025-12-05', status: 'Aguardando' },
@@ -42,7 +42,7 @@ const statusColors: Record<ProductionStatus, string> = {
   'Defeito': '#95a5a6',    
 };
 
-// Mocks de Modelos de Aeronaves (para o formulário)
+// Mocks de Modelos de Aeronaves
 const mockAircraftModels = [
     { name: 'AeroCode X-Jet', code: 'AC-XJ', type: 'Comercial' },
     { name: 'Bravo II Light', code: 'B-II-L', type: 'Treinamento' },
@@ -52,7 +52,7 @@ const mockAircraftModels = [
 
 
 // =========================================================
-// 2. Componente da Tabela (ProductionTable) - Mantido
+// 2. Componente da Tabela 
 // =========================================================
 
 const ProductionTable: React.FC<{ batches: Batch[], onViewTimeline: (batchId: string) => void }> = ({ batches, onViewTimeline }) => {
@@ -61,7 +61,7 @@ const ProductionTable: React.FC<{ batches: Batch[], onViewTimeline: (batchId: st
         alert(`Ação "${action}" solicitada para o Lote: ${batchId}`);
     };
     
-    // Função para simular a busca pela etapa atual
+    // busca pela etapa atual
     const getCurrentStepDisplay = (batchStatus: ProductionStatus): string => {
         if (batchStatus === 'Concluído') return 'Finalizado';
         if (batchStatus === 'Pausado') return 'Pausado';
@@ -94,7 +94,7 @@ const ProductionTable: React.FC<{ batches: Batch[], onViewTimeline: (batchId: st
                             <td style={{ padding: '15px' }}>{batch.model}</td>
                             <td style={{ padding: '15px' }}>{batch.quantity}</td>
                             <td style={{ padding: '15px' }}>{batch.startDate}</td>
-                            {/* CÉLULA DA ETAPA ATUAL */}
+                            {/* CÉLULA ETAPA ATUAL*/}
                             <td style={{ padding: '15px' }}>
                                 <span style={{ 
                                     color: statusColors[batch.status], 
@@ -105,7 +105,7 @@ const ProductionTable: React.FC<{ batches: Batch[], onViewTimeline: (batchId: st
                                     {getCurrentStepDisplay(batch.status)} 
                                 </span>
                             </td>
-                            {/* Célula do Workflow */}
+                            {/* Célula Workflow */}
                             <td style={{ padding: '15px' }}>
                                 <button 
                                     onClick={() => onViewTimeline(batch.id)} 
@@ -179,7 +179,7 @@ const NewBatchForm: React.FC<{ onClose: () => void, onBatchSubmit: (data: NewBat
         <form onSubmit={handleSubmit}>
             <h2 style={{ marginBottom: '20px', color: '#2c3e50' }}>Cadastrar Novo Lote de Produção</h2>
 
-            {/* 1. SELEÇÃO DO MODELO (Nome do Modelo + Código Interno) */}
+            {/* 1. SELEÇÃO DO MODELO */}
             <label style={{ fontWeight: 'bold' }}>1. Modelo de Aeronave (Nome/Código):</label>
             <select 
                 value={selectedModel} 
@@ -194,14 +194,14 @@ const NewBatchForm: React.FC<{ onClose: () => void, onBatchSubmit: (data: NewBat
                 ))}
             </select>
 
-            {/* Simulação dos campos Capacidade/Carga e Tipo (ReadOnly, provenientes do Catálogo) */}
+            {/*campos Capacidade/Carga e Tipo */}
             <div style={{ fontSize: '0.9em', color: '#555', marginBottom: '10px' }}>
                 <p style={{ margin: '5px 0' }}>**Código Interno:** <strong style={{color: '#333'}}>{currentModelDetails?.code}</strong></p>
                 <p style={{ margin: '5px 0' }}>**Tipo (Comercial/Militar):** <strong style={{color: '#333'}}>{currentModelDetails?.type}</strong></p>
-                {/* Nota: A Capacidade/Carga seria um campo do Catálogo, omitido aqui por simplificação do mock, mas o campo de Tipo está presente. */}
+                
             </div>
 
-            {/* 2. QUANTIDADE (Propriedade do Lote) */}
+            {/* 2-QUANTIDADE */}
             <label style={{ fontWeight: 'bold' }}>2. Quantidade de Aeronaves no Lote:</label>
             <input 
                 type="number" 
@@ -226,7 +226,7 @@ const NewBatchForm: React.FC<{ onClose: () => void, onBatchSubmit: (data: NewBat
 
 
 // =========================================================
-// 4. Componente Principal (Página) com Lógica de Modal
+// 4. Componente Principall
 // =========================================================
 
 const ProductionManagement: React.FC = () => {
@@ -254,7 +254,7 @@ const ProductionManagement: React.FC = () => {
   
   // Handler de submissão do formulário de Novo Lote
   const handleBatchSubmit = (data: NewBatchFormData) => {
-    // Simulação de geração de ID
+    
     const newId = `LOT-X${Math.floor(Math.random() * 900 + 100)}`; // LOT-X + 3 dígitos
     
     // Cria o novo lote
@@ -263,8 +263,8 @@ const ProductionManagement: React.FC = () => {
         model: data.model,
         quantity: data.quantity,
         startDate: new Date().toISOString().slice(0, 10),
-        estimatedCompletion: '2026-01-01', // Estimativa Mock
-        status: 'Aguardando', // Inicia em Aguardando
+        estimatedCompletion: '2026-01-01', 
+        status: 'Aguardando', 
     };
 
     // Adiciona ao topo da lista
@@ -273,7 +273,7 @@ const ProductionManagement: React.FC = () => {
   };
 
   
-  // Estilos do Modal (Utilizados para ambos)
+  // Estilos do Modal 
   const modalOverlayStyle: React.CSSProperties = {
       position: 'fixed',
       top: 0,
@@ -292,7 +292,7 @@ const ProductionManagement: React.FC = () => {
       padding: '20px',
       borderRadius: '8px',
       width: '90%',
-      maxWidth: selectedBatchId ? '600px' : '500px', // Tamanho ajustável para cada modal
+      maxWidth: selectedBatchId ? '600px' : '500px', 
       maxHeight: '80%',
       overflowY: 'auto',
       position: 'relative',

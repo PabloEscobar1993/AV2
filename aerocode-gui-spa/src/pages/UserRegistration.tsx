@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 // =========================================================
 
 interface UserRegistrationProps {
-    // Função chamada após o cadastro bem-sucedido para notificar o componente pai
+    
     onRegistrationSuccess: () => void; 
 }
 
@@ -14,7 +14,7 @@ interface UserRegistrationProps {
 // =========================================================
 
 const UserRegistration: React.FC<UserRegistrationProps> = ({ onRegistrationSuccess }) => {
-  // Estados para capturar os dados do formulário
+  
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [role, setRole] = useState<string>('engenheiro_producao'); 
@@ -27,15 +27,15 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onRegistrationSucce
       return;
     }
 
-    // SIMULAÇÃO: Aqui os dados seriam enviados para o Back-end/API
+    
     console.log({ username, password, role });
 
     alert(`✅ Funcionário "${username}" (Função: ${role}) cadastrado com sucesso!`);
 
-    // Chamar o callback para retornar à lista
+    
     onRegistrationSuccess();
     
-    // Limpar o formulário (opcional, já que a view irá mudar, mas boa prática)
+    
     setUsername('');
     setPassword('');
     setRole('engenheiro_producao');
@@ -59,7 +59,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onRegistrationSucce
 
   return (
     <div style={{ padding: '20px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-      {/* O H1 e a descrição da página de cadastro foram movidos para o UserManagement.tsx */}
+      
 
       <form onSubmit={handleSubmit}>
         
@@ -111,7 +111,7 @@ const UserRegistration: React.FC<UserRegistrationProps> = ({ onRegistrationSucce
         <button 
           type="submit"
           style={{ 
-            backgroundColor: '#2ecc71', // Verde
+            backgroundColor: '#2ecc71',
             color: 'white', 
             fontWeight: 'bold', 
             padding: '12px 20px', 

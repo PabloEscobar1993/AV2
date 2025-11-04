@@ -1,13 +1,13 @@
-import { Link, useNavigate } from 'react-router-dom'; // 1. IMPORTAR useNavigate AQUI!
+import { Link, useNavigate } from 'react-router-dom'; // 
 
 const Sidebar = () => {
-    // 2. INICIALIZAR useNavigate AQUI!
+    
     const navigate = useNavigate(); 
     
-    // Função de Logout para simplificar o clique
+    
     const handleLogout = () => {
-        localStorage.removeItem('auth_token'); // Remove o token
-        navigate('/'); // Redireciona para a rota de Login
+        localStorage.removeItem('auth_token'); 
+        navigate('/'); 
     };
 
     return (
@@ -21,20 +21,20 @@ const Sidebar = () => {
                     <Link to="/app/production">Gestão de Produção</Link>
                 </li>
 
-                {/* BOTÃO ÚNICO: Gerenciar Funcionários */}
+                {/* BOTÃO Gerenciar Funcionários */}
                 <li style={{ marginBottom: '10px', marginTop: '20px', borderTop: '1px solid #444', paddingTop: '10px' }}>
-                    <Link to="/app/users">👥 Gerenciar Funcionários</Link> {/* <--- LINK ÚNICO */}
+                    <Link to="/app/users">👥 Gerenciar Funcionários</Link> 
                 </li>
-                {/* Fim do Novo Grupo */}
+                
 
                 <li style={{ marginBottom: '10px' }}>
-                    <Link to="/app/catalog/aircraft">🛩️ Catálogo de Aeronaves</Link> {/* <--- NOVO LINK */}
+                    <Link to="/app/catalog/aircraft">🛩️ Catálogo de Aeronaves</Link> 
                 </li>
                 <li style={{ marginBottom: '10px' }}>
                     <button 
-                        onClick={handleLogout} // CHAMANDO A FUNÇÃO handleLogout
+                        onClick={handleLogout} 
                         style={{ 
-                            /* Estilos de botão simples para Logout */
+                            
                             backgroundColor: '#e74c3c', 
                             color: 'white', 
                             padding: '8px 15px',

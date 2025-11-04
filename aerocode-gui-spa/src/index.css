@@ -1,16 +1,16 @@
-/* CSS Reset Básico para garantir que a app ocupe 100% da tela */
+
 * {
-  box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
 
-/* Garante que o HTML e o corpo (body) ocupem 100% da altura da tela */
+
 html, body, #root {
   height: 100%;
 }
 
-/* Estilos de fonte básicos para o corpo */
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
@@ -23,9 +23,9 @@ body {
   font-weight: 400;
 
   color-scheme: light dark;
-  /* Cor do texto alterada para ser melhor visualizada contra fundo claro do dashboard */
+  
   color: #213547; 
-  /* Cor de fundo alterada para ser melhor visualizada contra fundo claro do dashboard */
+  
   background-color: #ffffff; 
 
   font-synthesis: none;
@@ -45,12 +45,9 @@ a:hover {
 
 body {
   margin: 0;
-  /* LINHAS REMOVIDAS: O "display: flex" e "place-items: center" abaixo 
-     são do template do Vite e impedem o seu layout de dashboard de funcionar. */
-  /* display: flex; */ 
-  /* place-items: center; */ 
+ 
   min-width: 320px;
-  min-height: 100vh; /* Mantido para garantir 100% da altura */
+  min-height: 100vh; 
 }
 
 h1 {

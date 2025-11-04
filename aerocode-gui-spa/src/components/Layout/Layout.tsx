@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Header from '../Navigation/Header'; // Vamos criar em seguida
-import Sidebar from '../Navigation/Sidebar'; // Vamos criar em seguida
-import './Layout.css'; // Para estilos básicos (opcional)
+import Header from '../Navigation/Header'; 
+import Sidebar from '../Navigation/Sidebar'; 
+import './Layout.css'; 
 
 const Layout = () => {
   return (
@@ -10,7 +10,7 @@ const Layout = () => {
       <div className="main-area">
         <Header />
         <main className="content">
-          {/* O Outlet renderiza o componente de página correspondente à rota atual (Dashboard ou ProductionManagement) */}
+          
           <Outlet /> 
         </main>
       </div>

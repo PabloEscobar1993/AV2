@@ -1,24 +1,24 @@
 import React from 'react';
 
-// Tipagem com TypeScript para garantir o uso correto das propriedades
+
 interface KpiCardProps {
   title: string;
   value: string | number;
-  unit?: string; // Ex: "unidades", "horas", "%"
-  trend?: 'up' | 'down' | 'neutral'; // Indica a tendência da métrica
+  unit?: string; 
+  trend?: 'up' | 'down' | 'neutral'; 
 }
 
 const KpiCard: React.FC<KpiCardProps> = ({ title, value, unit, trend = 'neutral' }) => {
   
-  // Lógica simples para cor e ícone da tendência
+  
   let trendIcon = '';
   let trendColor = 'gray';
   if (trend === 'up') {
     trendIcon = '▲';
-    trendColor = '#27ae60'; // Verde para melhoria/aumento
+    trendColor = '#27ae60'; 
   } else if (trend === 'down') {
     trendIcon = '▼';
-    trendColor = '#c0392b'; // Vermelho para atraso/queda (se for uma métrica ruim como taxa de defeitos)
+    trendColor = '#c0392b'; 
   }
 
   return (
@@ -26,7 +26,7 @@ const KpiCard: React.FC<KpiCardProps> = ({ title, value, unit, trend = 'neutral'
       padding: '20px', 
       border: '1px solid #ddd', 
       borderRadius: '8px', 
-      boxShadow: '0 4px 6px rgba(0,0,0,0.05)', // Sombra para dar profundidade
+      boxShadow: '0 4px 6px rgba(0,0,0,0.05)', 
       backgroundColor: 'white',
       width: '300px',
       minWidth: '250px'

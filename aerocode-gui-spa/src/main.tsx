@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* O BrowserRouter permite que a aplicação use o roteamento do navegador */}
+    {}
     <BrowserRouter>
       <App />
     </BrowserRouter>

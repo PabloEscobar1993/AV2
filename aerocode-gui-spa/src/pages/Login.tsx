@@ -9,8 +9,8 @@ const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simulação de Autenticação
-    // Em um sistema real, essa lógica faria uma requisição à API
+    // Autenticação
+    
     if (username === 'admin' && password === '123') {
       
       // Armazena um token fictício no localStorage para simular o estado de "logado"
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
       
       alert('Login efetuado com sucesso!');
       
-      // Redireciona o usuário para o Dashboard, que agora será a rota '/app/'
+      
       navigate('/app/'); 
       
     } else {
@@ -92,7 +92,7 @@ const Login: React.FC = () => {
           <button 
             type="submit"
             style={{ 
-              backgroundColor: '#3498db', // Azul
+              backgroundColor: '#3498db',
               color: 'white', 
               fontWeight: 'bold', 
               padding: '12px', 

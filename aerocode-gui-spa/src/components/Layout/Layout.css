@@ -1,30 +1,32 @@
-/* Estilos para o container principal da aplicação */
+
+
+
+
 .app-container {
-    display: flex; /* Define o container como flex */
-    min-height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
-    background-color: #f7f7f7; /* Cor de fundo leve para a aplicação */
+    display: flex; 
+    min-height: 100vh; 
+    background-color: #f7f7f7; 
 }
 
-/* Estilos para a área principal (Header + Conteúdo) */
+
 .main-area {
-    flex-grow: 1; /* Ocupa todo o espaço restante após a Sidebar */
+    flex-grow: 1; 
     display: flex;
-    flex-direction: column; /* Organiza Header acima do Content */
+    flex-direction: column; 
 }
 
-/* Estilos para o conteúdo (Onde a página atual é renderizada) */
+
 .content {
-    flex-grow: 1; /* Ocupa o espaço restante dentro da main-area */
+    flex-grow: 1; 
     padding: 20px;
-    overflow-y: auto; /* Permite rolagem apenas no conteúdo principal, se necessário */
+    overflow-y: auto;
 }
 
-/* Estilos de exemplo para a Sidebar (apenas para organização) */
-/* Remova os estilos inline de Sidebar.tsx e use esta classe no lugar: */
+
 .sidebar-nav {
     width: 200px;
     padding: 20px;
-    background: #2c3e50; /* Uma cor escura profissional */
+    background: #2c3e50; 
     color: white;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -47,8 +49,7 @@
 }
 
 
-/* Estilos de exemplo para o Header */
-/* Remova os estilos inline de Header.tsx e use esta classe no lugar: */
+
 .app-header {
     padding: 10px 20px;
     background: white;

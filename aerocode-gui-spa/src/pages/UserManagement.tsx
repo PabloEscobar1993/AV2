@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import UserRegistration from './UserRegistration'; // Importa o formulário de cadastro
+import UserRegistration from './UserRegistration'; 
 
-// =========================================================
-// 1. Tipos e Dados Fictícios
-// =========================================================
 
+// 1. Tipos e Dados 
 type UserStatus = 'Ativo' | 'Inativo' | 'Suspenso';
 
 interface User {
@@ -17,10 +15,10 @@ interface User {
 }
 
 const mockUsers: User[] = [
-  { id: 101, username: 'j_silva', fullName: 'João Silva', role: 'Administrador de Sistema', status: 'Ativo', registrationDate: '2025-01-10' },
-  { id: 102, username: 'm_costa', fullName: 'Maria Costa', role: 'Engenheiro de Produção', status: 'Ativo', registrationDate: '2025-02-25' },
-  { id: 103, username: 'a_freitas', fullName: 'Ana Freitas', role: 'Engenheiro Aeronáutico', status: 'Ativo', registrationDate: '2025-03-01' },
-  { id: 104, username: 'r_gomes', fullName: 'Rui Gomes', role: 'Supervisor de Qualidade', status: 'Inativo', registrationDate: '2025-04-15' },
+  { id: 101, username: 'Gerson', fullName: 'Gerson Penha', role: 'Administrador de Sistema', status: 'Ativo', registrationDate: '2025-01-10' },
+  { id: 102, username: 'Yago', fullName: 'Yago Pikachu', role: 'Engenheiro de Produção', status: 'Ativo', registrationDate: '2025-02-25' },
+  { id: 103, username: 'Blade', fullName: 'Blade ', role: 'Engenheiro Aeronáutico', status: 'Ativo', registrationDate: '2025-03-01' },
+  { id: 104, username: 'Constantine', fullName: 'John Constantine', role: 'Supervisor de Qualidade', status: 'Inativo', registrationDate: '2025-04-15' },
 ];
 
 const getStatusColor = (status: UserStatus) => {
@@ -36,7 +34,7 @@ const getStatusColor = (status: UserStatus) => {
 // 2. Sub-Componente: Visualização da Lista (Tabela)
 // =========================================================
 
-// Recebe um callback para mudar para a view de cadastro
+
 const UserListView: React.FC<{ users: User[], onRegisterClick: () => void }> = ({ users, onRegisterClick }) => {
     
     const handleEdit = (userId: number) => alert(`Simulando edição do usuário ID: ${userId}`);
@@ -103,7 +101,7 @@ const UserListView: React.FC<{ users: User[], onRegisterClick: () => void }> = (
 // =========================================================
 
 const UserManagement: React.FC = () => {
-    // 'list' exibe a tabela, 'register' exibe o formulário
+    
     const [view, setView] = useState<'list' | 'register'>('list');
 
     return (
